@@ -1,0 +1,32 @@
+<%= render partial: "users/header" %>
+
+<div class="table__box">
+<table class="list_table__style">
+
+<th>出勤</th>
+<th>退勤</th>
+</tr>
+<% @schedules.each do |schedule| %>
+<tr>
+<td><%= schedule.in %></td>
+<td><%= schedule.out %></td>
+</tr>
+<% end %>
+</table>
+</div>
+
+
+ <footer>
+    <div class="setting_box">
+      <a href="/users/new">
+      <div class="setting_box__button" id="registration">
+          <i class="fas fa-user-plus"></i><span class="setting_box__button-text">登録</span>
+      </div>
+      </a>
+      <a href="/">
+      <div class="setting_box__button">
+          <i class="fas fa-home"></i><span class="setting_box__button-text">戻る</span>
+      </div>
+      </a>
+    </div>
+  </footer>

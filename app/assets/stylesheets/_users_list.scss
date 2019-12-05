@@ -1,0 +1,88 @@
+h2{
+  background-color: $main_color;
+  font-size: 160%;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px 0;
+  letter-spacing: 5px;
+}
+
+.list_box{
+  top:100px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 40%;
+  height: 45px;
+  background-color: #fff;
+}
+
+.list_box__name{
+  font-size: 120%;
+  font-weight: bold;
+  margin-right: auto;
+  width: 100%;
+  line-height: 45px;
+}
+
+
+.list_box__button{
+  line-height: 45px;
+  width: 50%;  text-align: right;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+
+.list_box__button--text{
+  color: #fff;
+  background-color: $main_color;
+  padding:10px 20px;
+  border-radius: 2px;
+}
+
+.list_box__button--text:hover{
+  background-color:$sub_color;
+}
+
+
+
+.table__box{
+  top:100px;
+  margin: auto;
+  position: relative;
+  overflow: scroll;
+  width: 40%;
+  max-height: 75%;
+}
+
+.list_table__style{
+  margin: auto;
+  width: 100%;
+  border: solid 1px #333;
+}
+
+.list_table__style th{
+  background-color: $main_color;
+  color:#fff;
+  font-weight: bold;
+  border: solid 1px #333;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.list_table__style td{
+  margin:0 auto;
+  padding: 12px;
+  text-align: center;
+  font-size: 110%;
+  background-color: #fff;
+  border: solid 1px #333;
+  border-collapse: collapse;
+}

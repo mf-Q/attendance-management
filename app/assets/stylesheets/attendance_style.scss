@@ -1,0 +1,127 @@
+body, html{
+  height: 100%;
+  width: 100%;
+  background-color: #f0f8ff;
+}
+  
+  h1, h2, h3,  h4, h5, h6, p, body {
+  font-size: 14px;
+  color:$body_text_color;
+  font-family:sans-serif;
+  margin: 0;
+  padding: 0;
+  }
+
+  h1, h2, h3,  h4, h5, h6, p, body a {
+    text-decoration: none;
+    color: #666 ;
+  }
+  h1, h2, h3,  h4, h5, h6, p, body a:hover {
+    text-decoration: none;
+  }
+  
+  header{
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    background-color: $main_color;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .title{
+    display:inline-block;
+    margin-left:250px;
+    font-size: 180%;
+    font-weight: bold;
+    line-height: 44px;
+    color: #fff;
+  }
+
+  .header__realtime{
+    float: right;
+    line-height: 45px;
+    margin-right: 20px;
+    text-align: right;
+    font-size: 140%;
+    font-weight: bold;
+    color: #fff;
+    z-index:5;
+  }
+
+  .employee__box{
+    top:100px;
+    margin: auto;
+    position: relative;
+    overflow: scroll;
+    display: flex;
+    flex-wrap:wrap;
+    width: 80%;
+    max-height: 75%;
+    background-color: #fff;
+  }
+
+  .employee__box__list{
+    margin:0 ;
+}
+
+  .employee__box__list__name{
+    background-color: #e6e6fa;
+    display:block;
+    margin: 20px;
+    font-size: 115%;
+    padding: 20px 10px;
+    min-width: 100px;
+    border-radius: 3px;
+    text-align: center;
+    color: #333;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+  }
+  
+  .employee__box__list__name_select{
+    background-color: $main_color;
+    color:#fff;
+  }
+
+
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+  }
+
+  .setting_box{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .setting_box__button{
+    margin-left: 30px;
+    padding: 15px;
+    background-color:$main_color;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 115%;
+    font-weight: bold;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+  }
+  .setting_box__button:hover{
+    background-color:$sub_color;
+  }
+
+  .setting_box__button-text{
+    padding-left: 5px;
+  }
+
+ 

@@ -1,0 +1,40 @@
+<%= render partial: "header" %>
+<div class="form_box">
+<h2>登録内容変更</h2>
+
+<%= form_with(model: @user) do |f| %>
+<div class="form_box__category">
+<%= f.label :氏名, class:'label_text' %>
+<%= f.text_field :name, placeholder: '氏名を入れてください', class:'input_area' %>
+</div>
+<br>
+<div class="form_box__category">
+<%= f.label :メール, class:'label_text' %>
+<%= f.text_field :email, placeholder: 'メールアドレスを入れてください', class:'input_area' %>
+</div>
+<br>
+<div class="form_box__category">
+<%= f.label :パスワード, class:'label_text' %>
+<%= f.text_field :password, placeholder: 'パスワードを入れてください', class:'input_area' %>
+</div>
+<div class="form_box__category">
+<%= f.submit :変更, type: "submit", class:'form_button', data:{ confirm: "変更しますか？", commit: "はい", cancel: "いいえ"} do %>
+<% end %>
+<% end %>
+</div>
+</div>
+
+  <footer>
+    <div class="setting_box">
+      <a href="/users/new">
+      <div class="setting_box__button" id="registration">
+          <i class="fas fa-user-plus"></i><span class="setting_box__button-text">登録</span>
+      </div>
+      </a>
+      <a href="/">
+      <div class="setting_box__button">
+          <i class="fas fa-home"></i><span class="setting_box__button-text">戻る</span>
+      </div>
+      </a>
+    </div>
+  </footer>

@@ -1,0 +1,18 @@
+<%= render partial: "header" %>
+  <div class="employee__box">
+  <%= render partial: "employee", locals: { user: @user }%>
+  </div>
+  <footer>
+    <div class="setting_box">
+      <a href="/users/show">
+        <div class="setting_box__button">
+        <i class="fas fa-user-cog"></i><span class="setting_box__button-text">設定</span>
+      </div>
+      </a>
+      <a href="/users/new">
+      <div class="setting_box__button" id="registration">
+          <i class="fas fa-user-plus"></i><span class="setting_box__button-text">登録</span>
+      </div>
+      </a>
+    </div>
+  </footer>

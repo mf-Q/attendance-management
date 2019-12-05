@@ -1,0 +1,20 @@
+<% @users.each do |user| %>
+<div class="list_box">
+  <p class="list_box__name">
+    <%= user.name %>
+  </p>
+
+<div class="list_box__button">
+<%= link_to "勤怠一覧", user_schedules_path(user), class:"list_box__button--text"  %>
+</div>
+
+<div class="list_box__button">
+<%= link_to "変更", "/users/#{user.id}/edit", class:"list_box__button--text" %>
+</div>
+
+
+<div class="list_box__button">
+<%= link_to "削除", "#{user.id}", method: :delete, class:"list_box__button--text", data:{ confirm: "削除しますか？", commit: "削除", cancel: "キャンセル"}, title: "ご確認ください"  %>
+</div>
+</div>
+<% end %>
