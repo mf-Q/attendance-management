@@ -20,6 +20,7 @@ body, html{
     text-decoration: none;
   }
   
+
   header{
     position: fixed;
     width: 100%;
@@ -56,8 +57,8 @@ body, html{
     overflow: scroll;
     display: flex;
     flex-wrap:wrap;
-    width: 80%;
-    max-height: 75%;
+    max-width: 80%;
+    max-height: 65%;
     background-color: #fff;
   }
 
@@ -79,12 +80,19 @@ body, html{
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all  0.3s ease;
+
+    a:hover{
+      background-color:  $main_color;
+      color: #fff;
+    }
   }
   
   .employee__box__list__name_select{
     background-color: $main_color;
     color:#fff;
   }
+
+
 
 
 
@@ -123,5 +131,3 @@ body, html{
   .setting_box__button-text{
     padding-left: 5px;
   }
-
- 

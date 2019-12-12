@@ -1,5 +1,9 @@
 class SchedulesController < ApplicationController
 
+  def index
+    @schedules = Schedule.where(schedule_params)
+  end
+
   def new
       @schedule = Schedule.new
   end
@@ -13,29 +17,18 @@ class SchedulesController < ApplicationController
     end
   end
 
+
   def update
-    @schedule = Schedule.find(params[:id])
-    @schedule.update(out: params[:sch], user_id: schedule_params[:user_id])
-    @schedule.save
+    # @user = User.find(user.id)
+    # @schedule = Schedule.find(params[:id])
+    @schedule.update(out: params[:sch])
     respond_to do |format|
       format.html {redirect_to ("/")}
       format.json
     end
   end
 
-  def index
-    @schedules = Schedule.where(schedule_params)
-    @schedules.each do |schedule|
-      puts schedule.in
-      puts schedule.out
-      puts schedule.user_id
-      
-    # binding.pry
-    end
-  end
-
-
-
+  
   private
   def schedule_params
     params.permit(:in, :out, :user_id)

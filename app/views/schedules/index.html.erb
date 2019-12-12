@@ -8,8 +8,8 @@
 </tr>
 <% @schedules.each do |schedule| %>
 <tr>
-<td><%= schedule.in %></td>
-<td><%= schedule.out %></td>
+<td><%= schedule.in.strftime('%H:%M') %></td>
+<td><%= schedule.out.strftime('%H:%M') %></td>
 </tr>
 <% end %>
 </table>
