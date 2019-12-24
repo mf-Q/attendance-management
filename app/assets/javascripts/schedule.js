@@ -15,6 +15,8 @@ $(document).on('turbolinks:load', function(){
     if($(this).prop('id') == 'leave'){    
        $(this).prop('id', 'attend');
        $(this).addClass('employee__box__list__name_select');
+      //  $(this).prop('data-schedule-id', '<%=user.schedules.order(in: :desc).first.id%>');
+  
 
         $.ajax({
         url: url,
@@ -34,22 +36,20 @@ $(document).on('turbolinks:load', function(){
         })
 
       }else{
-        let schedule_id = $(this).data('schedule-id');
-        console.log("data取れてる？",schedule_id)
-        let update_url = '/users/' + user_id + '/schedules/' + schedule_id;
-        console.log("schedule-id取得",schedule_id)
+        let schedule_id = $(this).data('id');
+        let update_schedule = $(this).data('schedule-id');
+        console.log("updateしたいschedule.id", update_schedule)
+        let update_url = '/users/' + user_id + '/schedules/' + update_schedule;
         $(this).prop('id', 'leave');
         $(this).removeClass('employee__box__list__name_select');
-     
+        
         $.ajax({
           url: update_url,
           type: "PATCH",
-          cache: false,
           data: {sch: schedule},
           dataType: 'json'
         })
     }
-
 })
 
 });

@@ -1,8 +1,5 @@
 <% @users.each do |user| %>
 <ul class="employee__box__list">
-      <li class="employee__box__list__name", id="leave", data-user-id="<%=user.id%>",  data-schedule-id="<% @schedule %>"><%= user.name %></li>
-
+      <li class="employee__box__list__name", id="leave", value="<%=user.id%>" data-user-id="<%=user.id%>",  data-schedule-id="<%=user.schedules.ids.sort.last%>"><%= user.name %></li>
 </ul>
 <% end %>
-
-  

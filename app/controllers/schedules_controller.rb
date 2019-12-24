@@ -1,4 +1,4 @@
-class SchedulesController < ApplicationController
+class SchedulesController < ApplicationController 
 
   def index
     @schedules = Schedule.where(schedule_params)
@@ -19,14 +19,18 @@ class SchedulesController < ApplicationController
 
 
   def update
-    # @user = User.find(user.id)
-    # @schedule = Schedule.find(params[:id])
+    user = User.find(schedule_params[:user_id])
+    # @schedule = Schedule.where(user.schedules.order(:in).last)
+    @schedule = Schedule.find(user.schedules.ids.sort.last)
+    # binding.pry
+    # binding.pry
     @schedule.update(out: params[:sch])
     respond_to do |format|
       format.html {redirect_to ("/")}
       format.json
     end
   end
+
 
   
   private
