@@ -3,23 +3,26 @@
 <h2>登録内容変更</h2>
 
 <%= form_with(model: @user) do |f| %>
-<div class="form_box__category">
-<%= f.label :氏名, class:'label_text' %>
-<%= f.text_field :name, placeholder: '氏名を入れてください', class:'input_area' %>
-</div>
-<br>
-<div class="form_box__category">
-<%= f.label :メール, class:'label_text' %>
-<%= f.text_field :email, placeholder: 'メールアドレスを入れてください', class:'input_area' %>
-</div>
-<br>
-<div class="form_box__category">
-<%= f.label :パスワード, class:'label_text' %>
-<%= f.text_field :password, placeholder: 'パスワードを入れてください', class:'input_area' %>
-</div>
-<div class="form_box__category">
-<%= f.submit :変更, type: "submit", class:'form_button', data:{ confirm: "変更しますか？", commit: "はい", cancel: "いいえ"} do %>
-<% end %>
+  <div class="form_box__category">
+  <%= f.label :氏名, class:'label_text' %>
+  <%= f.text_field :name, placeholder: '氏名を入れてください', class:'input_area' %>
+  </div>
+  <br>
+  <div class="form_box__category">
+  <%= f.label :メール, class:'label_text' %>
+  <%= f.text_field :email, placeholder: 'メールアドレスを入れてください', class:'input_area' %>
+  </div>
+  <br>
+  <div class="form_box__category">
+  <%= f.label :パスワード, class:'label_text' %>
+  <%= f.password_field :password, placeholder: 'パスワードを入れてください', class:'input_area' %>
+  </div>
+  <div class="form_box__category">
+    <%= render 'layouts/flash' %>
+  </div>
+  <div class="form_box__category">
+      <%= f.submit :変更, type: "submit", class:'form_button', data:{ confirm: "変更しますか？", commit: "はい", cancel: "いいえ"} do %>
+    <% end %>
 <% end %>
 </div>
 </div>

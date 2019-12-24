@@ -10,11 +10,13 @@ $(document).on('turbolinks:load', function(){
 
     let user_id = $(this).data('user-id');
     let url = '/users/' + user_id + '/schedules';
-    
+    console.log("user-id取得", user_id)
 
     if($(this).prop('id') == 'leave'){    
        $(this).prop('id', 'attend');
        $(this).addClass('employee__box__list__name_select');
+      //  $(this).prop('data-schedule-id', '<%=user.schedules.order(in: :desc).first.id%>');
+  
 
         $.ajax({
         url: url,
@@ -26,30 +28,28 @@ $(document).on('turbolinks:load', function(){
         .done(function(data){
           var data_id = data.id
           $(".employee__box__list__name").attr('data-id', data_id)
-          $(this).prop('id', 'attend');
-          $(this).addClass('employee__box__list__name_select');
+          console.log("jsonからのデータ",data_id)
         })
-
+        
         .fail(function(data){
           alert('出勤できてません');
         })
 
       }else{
         let schedule_id = $(this).data('id');
-        let update_url = '/users/' + user_id + '/schedules/' + schedule_id;
-        
+        let update_schedule = $(this).data('schedule-id');
+        console.log("updateしたいschedule.id", update_schedule)
+        let update_url = '/users/' + user_id + '/schedules/' + update_schedule;
         $(this).prop('id', 'leave');
         $(this).removeClass('employee__box__list__name_select');
-     
+        
         $.ajax({
           url: update_url,
           type: "PATCH",
           data: {sch: schedule},
           dataType: 'json'
         })
-     
     }
-
 })
 
 });

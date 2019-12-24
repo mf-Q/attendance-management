@@ -1,0 +1,18 @@
+ .notifications {
+  color: #fff;
+  text-align: center;
+  z-index: 3;
+
+  .notice {
+    background-color: #00f;
+    color: #fff;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .alert {
+    background-color: #f00;
+    color: #fff;
+  }
+}
+ 
