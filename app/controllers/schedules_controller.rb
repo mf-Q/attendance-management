@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(in: params[:sch], user_id: schedule_params[:user_id])
-    @schedule.save
+    @schedule.save!
     respond_to do |format|
       format.html {redirect_to ("/")}
       format.json
@@ -20,11 +20,8 @@ class SchedulesController < ApplicationController
 
   def update
     user = User.find(schedule_params[:user_id])
-    # @schedule = Schedule.where(user.schedules.order(:in).last)
     @schedule = Schedule.find(user.schedules.ids.sort.last)
-    # binding.pry
-    # binding.pry
-    @schedule.update(out: params[:sch])
+    @schedule.update!(out: params[:sch])
     respond_to do |format|
       format.html {redirect_to ("/")}
       format.json
