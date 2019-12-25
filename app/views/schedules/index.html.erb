@@ -8,8 +8,20 @@
 </tr>
 <% @schedules.each do |schedule| %>
 <tr>
-<td><%= schedule.in.strftime('%H:%M') %></td>
-<td><%= schedule.out.strftime('%H:%M') %></td>
+<td><% if schedule.in.present? %>
+    <%= schedule.in.strftime('%H:%M') %>
+    <% else %>
+    <%="記録されていません" %>
+    <% end %>
+</td>
+
+<td><% if schedule.out.present? %>
+    <%= schedule.out.strftime('%H:%M') %>
+    <%else%>
+    <%= "記録されていません" %>
+    <% end %>
+</td>
+
 </tr>
 <% end %>
 </table>
