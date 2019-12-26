@@ -1,0 +1,54 @@
+<%= render partial: "users/header" %>
+
+<div class="table__box">
+
+<div class="upper_area">
+<p class="employee_name">
+<%= @user.name %> さんの<%= @schedule.created_at.strftime("%Y年%m月%d日(#{%w(日 月 火 水 木 金 土)[@schedule.created_at.wday]})" ) %> の退勤時間を修正
+</p>
+</div>
+
+<%= form_for [@schedule], url: user_schedule_path do |f| %>
+<table class="list_table__style">
+
+<th>出勤</th>
+<th>退勤</th>
+<th class="change">修正</th>
+
+<tr>
+<td>
+  <%= f.time_field :in, class: 'input_box' %>
+</td>
+
+<td>
+  <%= f.time_field :out, class: 'input_box' %>
+</td>
+
+<td>
+  <%= f.submit :修正, type: "submit", class: 'input_btn', data:{ confirm: "変更しますか？", commit: "はい", cancel: "いいえ"} do %>
+</td>
+
+</tr>
+<% end %>
+</table>
+</div>
+
+
+
+
+
+<footer>
+    <div class="setting_box">
+      <a href=" /users/<%= @schedule.user_id %>/schedules">
+      <div class="setting_box__button" id="registration">
+           <i class="fas fa-user-cog"></i><span class="setting_box__button-text">戻る</span>
+      </div>
+      </a>
+      <a href="/">
+      <div class="setting_box__button">
+          <i class="fas fa-home"></i><span class="setting_box__button-text">TOP</span>
+      </div>
+      </a>
+    </div>
+  <% end %>
+  </footer>

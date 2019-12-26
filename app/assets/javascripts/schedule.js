@@ -33,8 +33,7 @@ $(document).on('turbolinks:load', function(){
         })
 
       }else{
-        let update_schedule = $(this).data('schedule-id');
-        let update_url = '/users/' + user_id + '/schedules/' + update_schedule;
+        let update_url = '/users/' + user_id + '/schedules/';
         $(this).prop('id', 'leave');
         $(this).removeClass('employee__box__list__name_select');
         
