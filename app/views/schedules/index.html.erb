@@ -1,13 +1,28 @@
 <%= render partial: "users/header" %>
 
 <div class="table__box">
+
+<div class="upper_area">
+<p class="employee_name">
+<%= @user.name %> さんの勤怠状況
+</p>
+</div>
+
+
 <table class="list_table__style">
 
+<th>日付</th>
 <th>出勤</th>
 <th>退勤</th>
-</tr>
-<% @schedules.each do |schedule| %>
+<th class="change">修正</th>
+<th class="change">削除</th>
+
 <tr>
+<% @schedules.each do |schedule| %>
+<td>
+  <p class="date"><%= schedule.created_at.strftime("%Y年%m月%d日(#{%w(日 月 火 水 木 金 土)[schedule.created_at.wday]})" ) %></p>
+</td>
+
 <td><% if schedule.in.present? %>
     <%= schedule.in.strftime('%H:%M') %>
     <% else %>
@@ -22,6 +37,13 @@
     <% end %>
 </td>
 
+<td>
+<%= link_to "修正", "/users/#{schedule.user_id}/schedules/#{schedule.id}" %>
+</td>
+
+<td>
+  <%= link_to "削除", "/users/#{schedule.user_id}/schedules/#{schedule.id}", method: :delete, type: "submit", class: 'input_btn', data:{ confirm: "削除しますか？", commit: "はい", cancel: "いいえ"} %>
+</td>
 </tr>
 <% end %>
 </table>
@@ -35,9 +57,9 @@
           <i class="fas fa-user-plus"></i><span class="setting_box__button-text">登録</span>
       </div>
       </a>
-      <a href="/">
+      <a href="/users/show">
       <div class="setting_box__button">
-          <i class="fas fa-home"></i><span class="setting_box__button-text">戻る</span>
+           <i class="fas fa-user-cog"></i><span class="setting_box__button-text">戻る</span>
       </div>
       </a>
     </div>

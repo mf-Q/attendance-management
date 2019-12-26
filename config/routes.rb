@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root  'users#index'
   resources :users do
     resources :schedules
+      match 'schedules', to: 'schedules#edit', via: [:patch]
   
   end
 end
