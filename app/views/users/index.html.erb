@@ -1,6 +1,10 @@
 <%= render partial: "header" %>
   <div class="employee__box">
-  <%= render partial: "employee", locals: { user: @user }%>
+  <% @users.zip(@sch).each do |user, sch| %>
+  <ul class="employee__box__list">
+  <%= render partial: "employee", locals: { user: user, sch: sch} %>
+  </ul>
+  <% end %>
   </div>
   <footer>
     <div class="setting_box">

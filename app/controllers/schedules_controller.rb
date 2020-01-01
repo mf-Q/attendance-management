@@ -14,7 +14,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(in: params[:sch], user_id: schedule_params[:user_id])
-    @schedule.save!
+    @schedule.save
     respond_to do |format|
       format.html {redirect_to ("/")}
       format.json
@@ -45,7 +45,6 @@ class SchedulesController < ApplicationController
   end
 
   def destroy
-    # user = User.find(params[:user_id])
     schedule = Schedule.find(params[:id])
     schedule.destroy
     redirect_to action: 'index'

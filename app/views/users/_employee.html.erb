@@ -1,5 +1,7 @@
-<% @users.each do |user| %>
-<ul class="employee__box__list">
-      <li class="employee__box__list__name", id="leave", value="<%=user.id%>" data-user-id="<%=user.id%>"><%= user.name %></li>
-</ul>
+<% if sch.present? %>
+      <li class="employee__box__list__name", id="leave", data-user-id="<%=user.id%>"><%= user.name %></li>
+      <% else %>
+      <li class="employee__box__list__name_select", id="attend", data-user-id="<%=user.id%>"><%= user.name %></li>
 <% end %>
+
+
