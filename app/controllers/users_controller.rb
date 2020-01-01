@@ -2,14 +2,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all.order("id")
+    @sch = []
+    @users.each do |user|
+      @schedule = Schedule.find(user.schedules.ids.last)
+      @sch.push(@schedule.out)
+    end
+    
   end
-
-  # def get_schedule_id
-  #     @schedules = Schedule.all
-  #     @schedules.each do |sch|
-  #     @schedule = sch
-  #   end
-  # end
 
   def new
     @user = User.new
