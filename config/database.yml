@@ -52,3 +52,4 @@ production:
   database: attendance-management_production
   username: attendance-management
   password: <%= ENV['ATTENDANCE-MANAGEMENT_DATABASE_PASSWORD'] %>
+  socket: /tmp/mysql.sock
