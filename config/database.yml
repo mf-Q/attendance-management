@@ -55,7 +55,7 @@ test:
   
 
 production:
-  adapter:  mysql
+  adapter:  mysql2
   encoding: utf8
   database: <%= ENV['DB_NAME'] %>
   username: <%= ENV['DB_USERNAME'] %>
