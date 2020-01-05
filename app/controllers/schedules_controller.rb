@@ -4,8 +4,14 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.where(schedule_params)
     @schedules.each do |schedule|
       @sch = schedule.user_id
+      end
+    if @sch.present?
+     @user = User.find(@sch)
+     else 
+      User.all.each do |user|
+      @user = User.find(user.id)
+      end
     end
-    @user = User.find(@sch)
   end
 
   def new
