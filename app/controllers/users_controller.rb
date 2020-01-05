@@ -4,8 +4,12 @@ class UsersController < ApplicationController
     @users = User.all.order("id")
     @sch = []
     @users.each do |user|
+      if @schedule.nil?
+      @users = User.all.order("id")
       @schedule = Schedule.find(user.schedules.ids.last)
+      else
       @sch.push(@schedule.out)
+      end
     end
     
   end
