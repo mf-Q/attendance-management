@@ -1,6 +1,6 @@
 <% if sch.present? %>
       <li class="employee__box__list__name", id="leave", data-user-id="<%=user.id%>"><%= user.name %></li>
-      <% elsif sch.nil?%>
+      <% elsif user.schedules.ids.last.nil?%>
       <li class="employee__box__list__name", id="leave", data-user-id="<%=user.id%>"><%= user.name %></li>
       <% else %>
       <li class="employee__box__list__name_select", id="attend", data-user-id="<%=user.id%>"><%= user.name %></li>
